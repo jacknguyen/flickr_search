@@ -1,2 +1,21 @@
-<h1>Photos#index</h1>
-<p>Find me in app/views/photos/index.html.erb</p>
+<h1>Flickr Photos</h1>
+
+<%= form_tag("/", method: "get") do %>
+	<%= text_field_tag(:url) %>
+	<%= submit_tag("Search") %>
+<% end %>
+
+<br>
+<%# photoset_id = find_photoset_id_by_user_url("https://www.flickr.com/photos/jonathankosread") %>
+<%# photo_id = photos_in_set(photoset_id)[7] %>
+<%# photo = photo_url(photo_id) %>
+<% if @photo_ids %>
+	<ul>
+		<% @photo_ids.each do |photo| %>
+			<li>
+				<%= image_tag photo_url(photo) %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+

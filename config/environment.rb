@@ -5,3 +5,6 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 require 'flickraw'
+
+FlickRaw.api_key		= ENV["flickr_key"]
+FlickRaw.shared_secret	= ENV["flickr_secret"]
